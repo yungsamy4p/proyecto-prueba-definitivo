@@ -10,6 +10,7 @@ package com.mycompany.pruebapoblacional;
  */
 
 public class Pais {
+    
     private String nombre;
     private String continente;
     private String region;
@@ -119,5 +120,22 @@ public class Pais {
         public void setCodigoPais(String codigoPais) {
             this.codigoPais = codigoPais;
         }
-        
+
+    public Pais(String nombre, String continente, String region, double superficie, int anioIndependencia, long poblacion, double expectativaVida, double productoNacionalBruto, String formaGobierno, String jefeEstado, String ciudadCapital, String codigoPais) {
+        this.nombre = nombre;
+        this.continente = continente;
+        this.region = region;
+        this.superficie = superficie;
+        this.anioIndependencia = anioIndependencia;
+        this.poblacion = poblacion;
+        this.expectativaVida = expectativaVida;
+        this.productoNacionalBruto = productoNacionalBruto;
+        this.formaGobierno = formaGobierno;
+        this.jefeEstado = jefeEstado;
+        this.ciudadCapital = ciudadCapital;
+        this.codigoPais = codigoPais;
     }
+        
+        
+        
+}
