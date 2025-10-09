@@ -41,6 +41,12 @@ public class IdiomaPais {
         this.idioma = idioma;
         this.esOficial = esOficial;
         this.porcentajePoblacion = porcentajePoblacion;
+        
+    }
+
+    @Override
+    public String toString() {
+        return "IdiomaPais{" + "idioma=" + idioma + ", esOficial=" + esOficial + ", porcentajePoblacion=" + porcentajePoblacion + '}';
     }
     
 }

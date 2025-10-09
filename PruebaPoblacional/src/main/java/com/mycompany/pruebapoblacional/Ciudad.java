@@ -45,12 +45,19 @@ public class Ciudad {
     public void setPoblacion(long poblacion) {
         this.poblacion = poblacion;
     }
-
+    
+    
     public Ciudad(String nombre, String pais, String distrito, long poblacion) {
         this.nombre = nombre;
         this.pais = pais;
         this.distrito = distrito;
         this.poblacion = poblacion;
+        
+    }
+
+    @Override
+    public String toString() {
+        return "Ciudad{" + "nombre=" + nombre + ", pais=" + pais + ", distrito=" + distrito + ", poblacion=" + poblacion + '}';
     }
     
 }

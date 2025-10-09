@@ -23,6 +23,7 @@ public class Pais {
     private String codigoPais;
 
 
+
         public String getNombre() {
             return nombre;
         }
@@ -118,8 +119,9 @@ public class Pais {
         public void setCodigoPais(String codigoPais) {
             this.codigoPais = codigoPais;
         }
+        
 
-    public Pais(String nombre, String continente, String region, double superficie, int anioIndependencia, long poblacion, double expectativaVida, double productoNacionalBruto, String formaGobierno, String jefeEstado, String ciudadCapital, String codigoPais) {
+        public Pais(String nombre, String continente, String region, double superficie, int anioIndependencia, long poblacion, double expectativaVida, double productoNacionalBruto, String formaGobierno, String jefeEstado, String ciudadCapital, String codigoPais) {
         this.nombre = nombre;
         this.continente = continente;
         this.region = region;
@@ -132,6 +134,12 @@ public class Pais {
         this.jefeEstado = jefeEstado;
         this.ciudadCapital = ciudadCapital;
         this.codigoPais = codigoPais;
+
+    }
+
+    @Override
+    public String toString() {
+        return "Pais{" + "nombre=" + nombre + ", continente=" + continente + ", region=" + region + ", superficie=" + superficie + ", anioIndependencia=" + anioIndependencia + ", poblacion=" + poblacion + ", expectativaVida=" + expectativaVida + ", productoNacionalBruto=" + productoNacionalBruto + ", formaGobierno=" + formaGobierno + ", jefeEstado=" + jefeEstado + ", ciudadCapital=" + ciudadCapital + ", codigoPais=" + codigoPais + ", ciudades=" + ciudades + ", idiomas=" + idiomas + '}';
     }
 
 }
