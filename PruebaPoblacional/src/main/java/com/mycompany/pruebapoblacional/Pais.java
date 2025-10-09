@@ -1,0 +1,123 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.pruebapoblacional;
+
+/**
+ *
+ * @author Santo Tomas
+ */
+
+public class Pais {
+    private String nombre;
+    private String continente;
+    private String region;
+    private double superficie;
+    private int anioIndependencia;
+    private long poblacion;
+    private double expectativaVida;
+    private double productoNacionalBruto;
+    private String formaGobierno;
+    private String jefeEstado;
+    private String ciudadCapital;
+    private String codigoPais;
+
+
+        public String getNombre() {
+            return nombre;
+        }
+
+        public void setNombre(String nombre) {
+            this.nombre = nombre;
+        }
+
+        public String getContinente() {
+            return continente;
+        }
+
+        public void setContinente(String continente) {
+            this.continente = continente;
+        }
+
+        public String getRegion() {
+            return region;
+        }
+
+        public void setRegion(String region) {
+            this.region = region;
+        }
+
+        public double getSuperficie() {
+            return superficie;
+        }
+
+        public void setSuperficie(double superficie) {
+            this.superficie = superficie;
+        }
+
+        public int getAnioIndependencia() {
+            return anioIndependencia;
+        }
+
+        public void setAnioIndependencia(int anioIndependencia) {
+            this.anioIndependencia = anioIndependencia;
+        }
+
+        public long getPoblacion() {
+            return poblacion;
+        }
+
+        public void setPoblacion(long poblacion) {
+            this.poblacion = poblacion;
+        }
+
+        public double getExpectativaVida() {
+            return expectativaVida;
+        }
+
+        public void setExpectativaVida(double expectativaVida) {
+            this.expectativaVida = expectativaVida;
+        }
+
+        public double getProductoNacionalBruto() {
+            return productoNacionalBruto;
+        }
+
+        public void setProductoNacionalBruto(double productoNacionalBruto) {
+            this.productoNacionalBruto = productoNacionalBruto;
+        }
+
+        public String getFormaGobierno() {
+            return formaGobierno;
+        }
+
+        public void setFormaGobierno(String formaGobierno) {
+            this.formaGobierno = formaGobierno;
+        }
+
+        public String getJefeEstado() {
+            return jefeEstado;
+        }
+
+        public void setJefeEstado(String jefeEstado) {
+            this.jefeEstado = jefeEstado;
+        }
+
+        public String getCiudadCapital() {
+            return ciudadCapital;
+        }
+
+        public void setCiudadCapital(String ciudadCapital) {
+            this.ciudadCapital = ciudadCapital;
+        }
+
+        public String getCodigoPais() {
+            return codigoPais;
+        }
+
+        public void setCodigoPais(String codigoPais) {
+            this.codigoPais = codigoPais;
+        }
+        
+    }
