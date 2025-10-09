@@ -8,9 +8,7 @@ package com.mycompany.pruebapoblacional;
  *
  * @author Santo Tomas
  */
-
 public class Pais {
-    
     private String nombre;
     private String continente;
     private String region;
@@ -135,7 +133,5 @@ public class Pais {
         this.ciudadCapital = ciudadCapital;
         this.codigoPais = codigoPais;
     }
-        
-        
-        
+
 }
