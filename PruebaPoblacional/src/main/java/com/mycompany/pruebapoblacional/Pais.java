@@ -21,8 +21,8 @@ public class Pais {
     private String jefeEstado;
     private String ciudadCapital;
     private String codigoPais;
-
-
+    private String ciudades;
+    private String idiomas;
 
         public String getNombre() {
             return nombre;
@@ -119,6 +119,22 @@ public class Pais {
         public void setCodigoPais(String codigoPais) {
             this.codigoPais = codigoPais;
         }
+
+    public String getCiudad() {
+        return ciudades;
+    }
+
+    public void setCiudad(String ciudades) {
+        this.ciudades = ciudades;
+    }
+
+    public String getIdiomas() {
+        return idiomas;
+    }
+
+    public void setIdiomas(String idiomas) {
+        this.idiomas = idiomas;
+    }
         
 
         public Pais(String nombre, String continente, String region, double superficie, int anioIndependencia, long poblacion, double expectativaVida, double productoNacionalBruto, String formaGobierno, String jefeEstado, String ciudadCapital, String codigoPais) {
