@@ -2,7 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.mycompany.pruebapoblacional;
+package vista;
+
+import control.ControlPoblacional;
+import modelo.Pais;
 
 /**
  *
