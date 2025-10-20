@@ -23,6 +23,8 @@ public class Pais {
     private String codigoPais;
     private String ciudades;
     private String idiomas;
+    private ArrayList<IdiomaPais> idiomas;
+    private ArrayList<Ciudad> ciudades;
 
         public String getNombre() {
             return nombre;

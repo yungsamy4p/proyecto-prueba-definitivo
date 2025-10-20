@@ -4,6 +4,9 @@
 
 package main;
 
+import control.ControlPoblacional;
+import vista.VentanaPaises;
+
 /**
  *
  * @author Santo Tomas
@@ -11,7 +14,10 @@ package main;
 public class PruebaPoblacional {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+    ControlPoblacional control = new ControlPoblacional();
+    VentanaPaises ventana = new VentanaPaises(control);
+    ventana.setVisible(true);
+    
     }
 
 }
