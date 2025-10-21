@@ -191,29 +191,44 @@ public class FormularioRegistro extends javax.swing.JPanel {
     }//GEN-LAST:event_txtContinenteActionPerformed
 
     
-    private ControlPoblacional control = new ControlPoblacional();
+private final ControlPoblacional control = new ControlPoblacional();
     
-    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {
-         try {
-              Pais p = new Pais();
-              p.setCodigoPais(txtCodigo.getText());
-              p.setNombre(txtNombre.getText());
-              p.setContinente(txtContinente.getText());
-              p.setPoblacion(Long.parseLong(txtPoblacion.getText()));
+private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {
+    Pais p = new Pais();
+    p.setCodigoPais(txtCodigo.getText());
+    p.setNombre(txtNombre.getText());
+    p.setContinente(txtContinente.getText());
+    p.setPoblacion(Long.parseLong(txtPoblacion.getText()));
 
-              control.agregarPais(p);
-               tblPaises.setModel(control.obtenerModeloTabla());
-
-               javax.swing.JOptionPane.showMessageDialog(this, "País agregado correctamente.");
-               
-               txtCodigo.setText("");
-               txtNombre.setText("");
-               txtContinente.setText("");
-               txtPoblacion.setText("");
-            } catch (NumberFormatException e) {
-                javax.swing.JOptionPane.showMessageDialog(this, "Error: La población debe ser un número.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
-          }
+    control.agregarPais(p);
+    tblPaises.setModel(control.obtenerModeloTabla());
 }
+
+private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {
+    tblPaises.setModel(control.obtenerModeloTabla());
+}
+
+
+private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {
+    String codigo = txtCodigo.getText();
+
+    Pais nuevo = new Pais();
+    nuevo.setCodigoPais(txtCodigo.getText());
+    nuevo.setNombre(txtNombre.getText());
+    nuevo.setContinente(txtContinente.getText());
+    nuevo.setPoblacion(Long.parseLong(txtPoblacion.getText()));
+
+    if (control.modificarPais(codigo, nuevo)) {
+        javax.swing.JOptionPane.showMessageDialog(this, "País modificado correctamente.");
+    } else {
+        javax.swing.JOptionPane.showMessageDialog(this, "No se encontró el país con ese código.");
+    }
+
+    tblPaises.setModel(control.obtenerModeloTabla());
+}
+
+
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;

@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
 public class ControlPoblacional {
+    
     private ArrayList<Pais> listaPaises;
 
     public ControlPoblacional() {
@@ -33,19 +34,27 @@ public class ControlPoblacional {
         return null;
     }
 
-    public void modificarPais(Pais nuevoPais) {
+    public boolean modificarPais(String codigo, Pais nuevo) {
         for (int i = 0; i < listaPaises.size(); i++) {
-            if (listaPaises.get(i).getCodigoPais().equalsIgnoreCase(nuevoPais.getCodigoPais())) {
-                listaPaises.set(i, nuevoPais);
+            if (listaPaises.get(i).getCodigoPais().equalsIgnoreCase(codigo)) {
+                listaPaises.set(i, nuevo);
+                return true;
             }
         }
+        return false;
     }
 
     public DefaultTableModel obtenerModeloTabla() {
         String[] columnas = {"Código", "Nombre", "Continente", "Población"};
         DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
+
         for (Pais p : listaPaises) {
-            Object[] fila = {p.getCodigoPais(), p.getNombre(), p.getContinente(), p.getPoblacion()};
+            Object[] fila = {
+                p.getCodigoPais(),
+                p.getNombre(),
+                p.getContinente(),
+                p.getPoblacion()
+            };
             modelo.addRow(fila);
         }
         return modelo;
