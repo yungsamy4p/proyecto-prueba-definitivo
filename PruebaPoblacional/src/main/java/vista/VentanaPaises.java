@@ -229,6 +229,32 @@ private void limpiarCampos() {
         JOptionPane.showMessageDialog(this, "Error: La población debe ser un número válido.", "Error de Formato", JOptionPane.ERROR_MESSAGE);
         return; 
     }   
+    
+    try {
+        // Validación de Código Duplicado (Opcional pero recomendado)
+        if (control.buscarPaisPorCodigo(txtCodigo.getText().trim()) != null) {
+            JOptionPane.showMessageDialog(this, "Error: Ya existe un país con ese código.", "Código Duplicado", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        Pais p = new Pais();
+        p.setCodigoPais(txtCodigo.getText().trim()); // Usamos trim() para quitar espacios extra
+        p.setNombre(txtNombre.getText().trim());
+        p.setContinente(txtContinente.getText().trim());
+        p.setPoblacion(poblacion); // Usamos la variable 'poblacion' ya validada
+
+        // ❗ ADVERTENCIA: Aquí solo estás guardando 4 campos.
+
+        control.agregarPais(p); // <-- ESTA LÍNEA AGREGA EL PAÍS
+        JOptionPane.showMessageDialog(this, "País agregado correctamente.");
+
+        limpiarCampos();
+        btnConsultarActionPerformed(evt); // Actualiza la tabla
+
+    } catch (Exception e) { // Captura genérica por si algo más falla
+        JOptionPane.showMessageDialog(this, "Error inesperado al agregar el país: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
