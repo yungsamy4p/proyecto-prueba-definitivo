@@ -176,7 +176,6 @@ public class Login extends javax.swing.JFrame {
     }
 
 private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {
-    // Validaciones opcionales
     String nombre = txtNombre.getText();
     String identificacion = txtIdentificacion.getText();
 
@@ -184,14 +183,11 @@ private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {
         javax.swing.JOptionPane.showMessageDialog(this, "Complete todos los campos.");
         return;
     }
-
-    // Abre la ventana principal
+    
+// Abre la ventana principal
     new vista.VentanaPaises().setVisible(true);
-    this.dispose(); // Cierra la ventana de login
-}
-    
-    
-    
+    this.dispose();
+}   
     
 private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {
     txtNombre.setText("");
