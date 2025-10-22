@@ -11,7 +11,6 @@ package control;
 
 import modelo.Pais;
 import modelo.Ciudad;
-import modelo.IdiomaPais; 
 import java.util.ArrayList;
 import java.util.Comparator; 
 import java.util.stream.Collectors; 
@@ -61,14 +60,6 @@ public class ControlPoblacional {
         return false;
     }
     
-    public boolean agregarIdiomaAPais(String codigoPais, IdiomaPais idioma) {
-        Pais pais = buscarPaisPorCodigo(codigoPais);
-        if (pais != null) {
-            pais.getIdiomas().add(idioma);
-            return true;
-        }
-        return false;
-    }
 
     public Pais buscarPaisPorNombre(String nombre) {
         for (Pais p : listaPaises) {
@@ -102,15 +93,6 @@ public class ControlPoblacional {
         Pais pais = buscarPaisPorCodigo(codigoPais);
         if (pais != null) {
             return pais.getCiudades();
-        }
-        return new ArrayList<>();
-    }
-    
-
-    public ArrayList<IdiomaPais> obtenerIdiomasDePais(String codigoPais) {
-        Pais pais = buscarPaisPorCodigo(codigoPais);
-        if (pais != null) {
-            return pais.getIdiomas();
         }
         return new ArrayList<>();
     }

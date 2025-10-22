@@ -205,9 +205,12 @@ private void limpiarCampos() {
 
     
     private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_txtCodigoActionPerformed
 
+    /// ---- BOTONES DE PANEL PRINCIPAL
+    
+    
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
     if (txtCodigo.getText().trim().isEmpty() || 
         txtNombre.getText().trim().isEmpty() ||
@@ -231,34 +234,30 @@ private void limpiarCampos() {
     }   
     
     try {
-        // Validación de Código Duplicado (Opcional pero recomendado)
         if (control.buscarPaisPorCodigo(txtCodigo.getText().trim()) != null) {
             JOptionPane.showMessageDialog(this, "Error: Ya existe un país con ese código.", "Código Duplicado", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
         Pais p = new Pais();
-        p.setCodigoPais(txtCodigo.getText().trim()); // Usamos trim() para quitar espacios extra
+        p.setCodigoPais(txtCodigo.getText().trim());
         p.setNombre(txtNombre.getText().trim());
         p.setContinente(txtContinente.getText().trim());
-        p.setPoblacion(poblacion); // Usamos la variable 'poblacion' ya validada
+        p.setPoblacion(poblacion);
 
-        // ❗ ADVERTENCIA: Aquí solo estás guardando 4 campos.
-
-        control.agregarPais(p); // <-- ESTA LÍNEA AGREGA EL PAÍS
+        control.agregarPais(p);
         JOptionPane.showMessageDialog(this, "País agregado correctamente.");
 
         limpiarCampos();
-        btnConsultarActionPerformed(evt); // Actualiza la tabla
+        btnConsultarActionPerformed(evt); 
 
-    } catch (Exception e) { // Captura genérica por si algo más falla
+    } catch (Exception e) {
         JOptionPane.showMessageDialog(this, "Error inesperado al agregar el país: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
     }
     
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
-        // TODO add your handling code here:
         jTable1.setModel(control.obtenerModeloTabla());
     }//GEN-LAST:event_btnConsultarActionPerformed
 
@@ -310,8 +309,12 @@ private void limpiarCampos() {
     }
     }//GEN-LAST:event_btnModificarActionPerformed
 
+
+    /// ---- BOTONES DE REVISION DE PAISES / CONTINENTES
+    
+    
     private void btnListarContinenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarContinenteActionPerformed
-        // TODO add your handling code here:
+
         String continenteBuscado = JOptionPane.showInputDialog(this, "Ingrese el continente a listar:", "Listar por Continente", JOptionPane.QUESTION_MESSAGE);
 
          if (continenteBuscado != null && !continenteBuscado.trim().isEmpty()) {
@@ -331,7 +334,7 @@ private void limpiarCampos() {
     }//GEN-LAST:event_btnListarContinenteActionPerformed
 
     private void btnBuscarNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarNombreActionPerformed
-        // TODO add your handling code here:
+
         String nombreBuscado = JOptionPane.showInputDialog(this, "Ingrese el nombre del país a buscar:", "Buscar por Nombre", JOptionPane.QUESTION_MESSAGE);
 
         if (nombreBuscado != null && !nombreBuscado.trim().isEmpty()) {

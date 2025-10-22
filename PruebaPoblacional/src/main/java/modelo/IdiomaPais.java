@@ -9,6 +9,7 @@ package modelo;
  * @author samue
  */
 public class IdiomaPais {
+    
     private String idioma;
     private boolean esOficial;
     private double porcentajePoblacion;

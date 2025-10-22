@@ -35,9 +35,12 @@ public class Pais {
     }
 
 
+    /// ---- SOLO SE USARÁ (CIUDAD, CONTINENTE, NOMBRE, CODIGO)
+    
     public Pais(String nombre, String continente, String region, double superficie, int anioIndependencia,
                 long poblacion, double expectativaVida, double productoNacionalBruto,
                 String formaGobierno, String jefeEstado, String ciudadCapital, String codigoPais) {
+        
         this.nombre = nombre;
         this.continente = continente;
         this.region = region;
@@ -54,7 +57,8 @@ public class Pais {
         this.idiomas = new ArrayList<>();
     }
 
-    // 🔹 Getters y Setters
+    /// ---- Getters y Setters
+
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
 

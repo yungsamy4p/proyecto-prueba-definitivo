@@ -9,6 +9,7 @@ package modelo;
  * @author samue
  */
 public class Ciudad {
+    
     private String nombre;
     private String pais;
     private String distrito;
