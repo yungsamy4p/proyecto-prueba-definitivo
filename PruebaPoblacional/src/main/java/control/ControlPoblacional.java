@@ -136,7 +136,21 @@ public class ControlPoblacional {
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
+    public DefaultTableModel obtenerModeloTabla(ArrayList<Pais> listaFiltrada) {
+    String[] columnas = {"Código", "Nombre", "Continente", "Población"};
+    DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
 
+    for (Pais p : listaFiltrada) { 
+        Object[] fila = {
+            p.getCodigoPais(),
+            p.getNombre(),
+            p.getContinente(),
+            p.getPoblacion()
+        };
+        modelo.addRow(fila);
+    }
+    return modelo;
+}
     
     public DefaultTableModel obtenerModeloTabla() {
         String[] columnas = {"Código", "Nombre", "Continente", "Población"};
