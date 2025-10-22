@@ -16,13 +16,11 @@ import modelo.Pais;
 
 public class VentanaPaises extends javax.swing.JFrame {
 
-    // 🔹 MOVIDO: El control debe estar aquí para que la ventana lo use
     private ControlPoblacional control = new ControlPoblacional();
 
     public VentanaPaises() {
-        initComponents();
+        initComponents(); 
         setLocationRelativeTo(null);
-        // 🔹 NUEVO: Carga los países existentes (si los hay) al iniciar
         btnConsultarActionPerformed(null); 
     }
     
@@ -151,18 +149,19 @@ public class VentanaPaises extends javax.swing.JFrame {
         }// </editor-fold>//GEN-END:initComponents
 
 private void limpiarCampos() {
-        txtCodigo.setText("");
-        txtNombre.setText("");
-        txtContinente.setText("");
-        txtPoblacion.setText("");
-    }
+    txtCodigo.setText("");
+    txtNombre.setText("");
+    txtContinente.setText("");
+    txtPoblacion.setText("");
+}
 
 
 
 @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+private void initComponents() {
 
+        // --- ESTA ES LA SECCIÓN DE DECLARACIÓN DE COMPONENTES ---
         lblCodigo = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
         lblContinente = new javax.swing.JLabel();
@@ -179,12 +178,10 @@ private void limpiarCampos() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        // --- ESTA ES LA SECCIÓN DE PROPIEDADES DE COMPONENTES ---
         lblCodigo.setText("Codigo");
-
         lblNombre.setText("Nombre");
-
         lblContinente.setText("Continente");
-
         lblPoblacion.setText("Poblacion");
 
         txtCodigo.addActionListener(new java.awt.event.ActionListener() {
@@ -221,9 +218,9 @@ private void limpiarCampos() {
             }
         ));
         jScrollPane2.setViewportView(tblPaises);
-    
-        
-javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+
+        // --- ESTA ES LA SECCIÓN DE LAYOUT (EL CÓDIGO QUE "FLOTABA") ---
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,7 +279,10 @@ javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                             .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
-        
+
+        pack();
+    }
+
         
     
     private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
@@ -297,27 +297,23 @@ javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
             p.setNombre(txtNombre.getText());
             p.setContinente(txtContinente.getText());
             p.setPoblacion(Long.parseLong(txtPoblacion.getText()));
-            
-            // ❗ ADVERTENCIA: Aquí solo estás guardando 4 campos.
-            // El resto de campos del modelo (Región, PNB, etc.) quedan vacíos.
-            // Ver sección 4 de mi respuesta.
-
+         
             control.agregarPais(p);
             JOptionPane.showMessageDialog(this, "País agregado correctamente.");
             
             limpiarCampos();
-            btnConsultarActionPerformed(evt); // Actualiza la tabla
+            btnConsultarActionPerformed(evt);
 
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Error: La población debe ser un número válido.", "Error de Formato", JOptionPane.ERROR_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error al agregar el país: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        }     
+        }
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
         // TODO add your handling code here:
-        tblPaises.setModel(control.obtenerModeloTabla());   
+        tblPaises.setModel(control.obtenerModeloTabla()); 
     }//GEN-LAST:event_btnConsultarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
