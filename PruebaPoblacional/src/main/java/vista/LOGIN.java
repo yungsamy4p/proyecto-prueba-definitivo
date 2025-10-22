@@ -9,10 +9,6 @@ package vista;
  * @author Santo Tomas
  */
 public class Login extends javax.swing.JFrame {
-
-    /**
-     * Creates new form LOGIN
-     */
     public Login() {
         initComponents();
     }
@@ -133,10 +129,24 @@ public class Login extends javax.swing.JFrame {
 
     private void btnIngresarActionPerformedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformedActionPerformed
         // TODO add your handling code here:
+        String nombre = txtNombre.getText();
+        String identificacion = txtIdentificacion.getText();
+
+        if (nombre.isEmpty() || identificacion.isEmpty()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Complete todos los campos.");
+            return;
+        }
+        new vista.VentanaPaises().setVisible(true);
+        this.dispose();
+
     }//GEN-LAST:event_btnIngresarActionPerformedActionPerformed
 
     private void btnLimpiarActionPerformedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformedActionPerformed
         // TODO add your handling code here:
+    txtNombre.setText("");
+    txtIdentificacion.setText("");
+    txtCorreo.setText("");
+    txtTelefono.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformedActionPerformed
 
     /**
@@ -173,28 +183,9 @@ public class Login extends javax.swing.JFrame {
                 new Login().setVisible(true);
             }
         });
-    }
-
-private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {
-    String nombre = txtNombre.getText();
-    String identificacion = txtIdentificacion.getText();
-
-    if (nombre.isEmpty() || identificacion.isEmpty()) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Complete todos los campos.");
-        return;
+    
     }
     
-// Abre la ventana principal
-    new vista.VentanaPaises().setVisible(true);
-    this.dispose();
-}   
-    
-private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {
-    txtNombre.setText("");
-    txtIdentificacion.setText("");
-    txtCorreo.setText("");
-    txtTelefono.setText("");
-}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresarActionPerformed;

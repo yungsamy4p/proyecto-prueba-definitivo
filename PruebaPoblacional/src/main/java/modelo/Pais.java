@@ -28,13 +28,13 @@ public class Pais {
     private ArrayList<IdiomaPais> idiomas;
     private ArrayList<Ciudad> ciudades;
 
-    // 🔹 Constructor vacío corregido
+
     public Pais() {
         this.ciudades = new ArrayList<>();
         this.idiomas = new ArrayList<>();
     }
 
-    // 🔹 Constructor con parámetros
+
     public Pais(String nombre, String continente, String region, double superficie, int anioIndependencia,
                 long poblacion, double expectativaVida, double productoNacionalBruto,
                 String formaGobierno, String jefeEstado, String ciudadCapital, String codigoPais) {
