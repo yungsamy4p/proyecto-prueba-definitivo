@@ -196,7 +196,7 @@
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="    SISTEMA DE REGISTRO POBLACIONAL"/>
+        <Property name="text" type="java.lang.String" value="        Sistema de Control poblacional"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">

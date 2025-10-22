@@ -100,7 +100,7 @@ public class VentanaPaises extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jLabel1.setText("    SISTEMA DE REGISTRO POBLACIONAL");
+        jLabel1.setText("        Sistema de Control poblacional");
 
         jButton1.setText("Buscar por Nombre");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
