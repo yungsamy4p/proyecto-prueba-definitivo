@@ -130,7 +130,7 @@ public class Login extends javax.swing.JFrame {
         String identificacion = txtIdentificacion.getText();
 
         if (nombre.isEmpty() || identificacion.isEmpty()) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Complete todos los campos.");
+            javax.swing.JOptionPane.showMessageDialog(this, "Complete todos los campos porfavor.");
             return;
         }
         new vista.VentanaPaises().setVisible(true);
